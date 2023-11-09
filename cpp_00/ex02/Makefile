@@ -1,10 +1,9 @@
-NAME = phonebook
+NAME = recovery
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = 	PhoneBook.cpp \
-		Contact.cpp \
-		main.cpp
+SRC = 	Account.cpp \
+		tests.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 16:03:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/09 16:48:08 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/09 19:39:01 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/09 19:39:14 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int PhoneBook::_getInput() const
         else
         {
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.ignore();
             std::cout << "Non numeric or invalid index! Please try again." << std::endl;
         }
     }

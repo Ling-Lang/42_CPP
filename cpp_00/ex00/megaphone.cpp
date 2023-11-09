@@ -29,6 +29,6 @@ int main (int argc, char **argv)
     {
         args.at(i) = std::toupper(args.at(i));
     }
-        std::cout << args << std::endl; 
+    std::cout << args << std::endl;
     return 0;
 }
