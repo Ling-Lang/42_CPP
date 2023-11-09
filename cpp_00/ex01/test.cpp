@@ -1,23 +1,22 @@
 #include <iostream>
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-Contact::Contact()
-{
-    first_name = "Max";
-    last_name = "Mustermann";
-    phone_number = "+49 0111 993399";
-    darkest_secret = "none";
-}
-void Contact::set_name(std::string f_name, std::string l_name)
-{
-    first_name = f_name;
-    last_name = l_name;
-}
 int main()
 {
-    Contact contact;
-    std::string tmp;
-    std::cin >> tmp;
-    contact.set_name(tmp, tmp);
-    std::cout << contact.get_f_name() + " " + contact.get_l_name() << std::endl;
+    PhoneBook pb;
+    std::string input = "";
+    pb.welcomeScreen();
+    while(input.compare("EXIT"))
+    {
+        if(input.compare("ADD") == 0)
+        pb.addContact();
+        else if(input.compare("SEARCH") == 0)
+        {
+            pb.listContacts();
+            pb.inspectContact();
+        }
+        std::cout << ">> " << std::flush;
+        std::cin >> input;
+    }
+    return 0;
 }
