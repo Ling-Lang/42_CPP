@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:38 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:02 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/12 16:47:46 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/12 17:01:31 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-int main()
+#include "Weapon.hpp"
+
+Weapon::Weapon(std::string type)
 {
-    Zombie z2("Zombie over constructor");
-    z2.announce();
-    Zombie *z = newZombie("Zombie over newZombie func");
-    z->announce();
-    randomChump("Zombie over randomChump");
-    delete(z);
+    this->setType(type);
+}
+
+Weapon::~Weapon()
+{
+
+}
+
+const std::string &Weapon::getType()
+{
+    return(this->_type);
+}
+
+void Weapon::setType(std::string type)
+{
+    this->_type = type;
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:38 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:02 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/12 16:54:42 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/12 17:16:32 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-int main()
+#include "HumanA.hpp"
+
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 {
-    Zombie z2("Zombie over constructor");
-    z2.announce();
-    Zombie *z = newZombie("Zombie over newZombie func");
-    z->announce();
-    randomChump("Zombie over randomChump");
-    delete(z);
+
+}
+
+HumanA::~HumanA()
+{
+    
+}
+void HumanA::attack()
+{
+    if(this->_weapon.getType() != "")
+        std::cout << this->_name << " attacks with their "
+            << this->_weapon.getType() << std::endl;
+    else
+        std::cout << this->_name << " has no weapon to attack with"
+            << std::endl;
 }

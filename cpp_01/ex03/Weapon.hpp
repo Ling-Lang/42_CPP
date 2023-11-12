@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:38 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:02 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/12 16:45:05 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/12 16:50:24 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-int main()
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
+
+#include <iostream>
+
+class Weapon
 {
-    Zombie z2("Zombie over constructor");
-    z2.announce();
-    Zombie *z = newZombie("Zombie over newZombie func");
-    z->announce();
-    randomChump("Zombie over randomChump");
-    delete(z);
-}
+private:
+    std::string _type;
+public:
+    Weapon(std::string type);
+    ~Weapon();
+    const std::string &getType();
+    void setType(std::string type);
+};
+
+
+#endif // WEAPON_HPP

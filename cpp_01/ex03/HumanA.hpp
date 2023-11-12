@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:38 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:02 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/12 16:52:11 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/12 17:00:58 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-int main()
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+#include "Weapon.hpp"
+class HumanA
 {
-    Zombie z2("Zombie over constructor");
-    z2.announce();
-    Zombie *z = newZombie("Zombie over newZombie func");
-    z->announce();
-    randomChump("Zombie over randomChump");
-    delete(z);
-}
+private:
+    std::string _name;
+    Weapon _weapon;
+public:
+    HumanA(std::string name, Weapon &weapon);
+    ~HumanA();
+    void attack();
+};
+
+
+#endif // HUMANA_HPP

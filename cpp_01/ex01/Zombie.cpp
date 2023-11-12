@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:08:38 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:02 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/10 10:26:57 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/12 16:18:17 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-int main()
+
+Zombie::Zombie()
 {
-    Zombie z2("Zombie over constructor");
-    z2.announce();
-    Zombie *z = newZombie("Zombie over newZombie func");
-    z->announce();
-    randomChump("Zombie over randomChump");
-    delete(z);
+}
+
+Zombie::~Zombie()
+{
+    std::cout << "Destroyed: " << this->_name << std::endl;
+}
+
+void Zombie::announce()
+{
+    std::cout << this->_name << ":  BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+    this->_name = name;
 }
