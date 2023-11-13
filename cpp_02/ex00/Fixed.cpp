@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 14:33:17 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/13 15:28:16 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/13 16:06:54 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/13 16:07:34 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int main()
-{
-    Harl harl;
-    std::string input;
-    
-    while(input.compare("stop"))
-    {
+#include <iostream>
 
-        std::cout << "Enter a level: ";
-        std::cin >> input;
-        harl.complain(input);
-        
-    }
-    exit(EXIT_SUCCESS);
-}
+
+#endif // FIXED_HPP
