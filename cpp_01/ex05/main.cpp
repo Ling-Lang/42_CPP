@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newSed.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 17:28:45 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/13 14:20:20 by jkulka           ###   ########.fr       */
+/*   Created: 2023/11/13 14:33:17 by jkulka            #+#    #+#             */
+/*   Updated: 2023/11/13 14:49:42 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NEWSED_HPP
-#define NEWSED_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <fstream>
-class newSed
+int main(int argc, char **argv)
 {
-private:
-    std::string _infile;
-    std::string _outfile;
-public:
-    newSed(std::string infile);
-    ~newSed();
-    void replace(std::string to_replace, std::string src);
-};
-
-#endif // NEWSED_HPP
+    Harl harl;
+    harl.complain(argv[1]);
+    // std::cout << "test" << std::endl;
+}

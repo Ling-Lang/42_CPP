@@ -1,9 +1,9 @@
-NAME = newSed
+NAME = harl
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = 	main.cpp \
-		newSed.cpp
+		Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
