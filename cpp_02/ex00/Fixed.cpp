@@ -6,14 +6,28 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:06:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/11/13 16:07:34 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/11/18 12:54:49 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
+Fixed::Fixed()
+{
+    std::cout << "Default Constructor Called" << std::endl;
+}
+Fixed::Fixed(const Fixed &c_Fixed)
+{
+    std::cout << "Copy Constructor Called" << std::endl;
+}
 
+Fixed::~Fixed()
+{
+    std::cout << "Deconstructor Called" << std::endl;
+}
 
-#endif // FIXED_HPP
+Fixed &Fixed::operator=(const Fixed &c_Fixed)
+{
+    std::cout << "Copy assignment constructor called" << std::endl;
+    return *this;
+}
