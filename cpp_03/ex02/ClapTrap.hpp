@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 09:46:07 by jkulka            #+#    #+#             */
-/*   Updated: 2023/12/14 12:55:13 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/12/14 13:27:16 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         int         _hp;
         int         _ep;
