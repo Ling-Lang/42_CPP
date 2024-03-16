@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:32:43 by jkulka            #+#    #+#             */
-/*   Updated: 2023/12/12 14:10:42 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/03/13 12:48:15 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(void) {
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-
-    std::cout << "3 / 2 in float is " << 
+    
     return 0;
 }
