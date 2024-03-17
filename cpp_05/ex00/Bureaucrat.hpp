@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:14:10 by jkulka            #+#    #+#             */
-/*   Updated: 2024/03/16 17:05:32 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/03/17 16:15:50 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ public:
     std::string getName() const;
     int getGrade() const;
     /* Setter */
-    void setName();
-    void setGrade();
+    void setGrade(int grade);
     /* Grade Functions */
     void incrementGrade();
     void decrementGrade();
+    /* Exceptions */
+    std::string Bureaucrat::GradeTooHighException();
+    std::string Bureaucrat::GradeTooLowException();
 };
