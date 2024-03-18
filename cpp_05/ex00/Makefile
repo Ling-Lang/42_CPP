@@ -13,6 +13,9 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) -c $< -o $@
 
+test: re
+	./$(NAME)
+
 clean:
 	$(RM) $(OBJ)
 

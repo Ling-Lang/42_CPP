@@ -32,6 +32,16 @@ public:
     void incrementGrade();
     void decrementGrade();
     /* Exceptions */
-    std::string Bureaucrat::GradeTooHighException();
-    std::string Bureaucrat::GradeTooLowException();
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
 };
+std::ostream&	operator<<(std::ostream &o, const Bureaucrat& bureaucrat);
