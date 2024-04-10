@@ -1,6 +1,6 @@
 {
     "name": "C Development Container",
-    "image": "ghcr.io/ling-lang/42_dev_env_scripts:0.0.1",
+    "image": "ghcr.io/ling-lang/42_dev_env_scripts:0.0.2",
     "customizations":{
         "vscode":{
             "settings":
