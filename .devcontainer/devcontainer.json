@@ -1,0 +1,16 @@
+{
+    "name": "C Development Container",
+    "image": "ghcr.io/ling-lang/42_dev_env_scripts:0.0.1",
+    "customizations":{
+        "vscode":{
+            "settings":
+            {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": 
+            [
+                "ms-vscode.cpptools"
+            ]
+        }
+    }
+}
