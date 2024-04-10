@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:25:29 by jkulka            #+#    #+#             */
-/*   Updated: 2024/03/21 13:49:10 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/04/10 14:03:35 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,83 @@ int main()
 	std::cout << std::endl << "------------------------------" << std::endl << std::endl;
     try
     {
-		std::cout << "Creating bureaucrat with grade 1" << std::endl;
-        Bureaucrat a("Bureaucrat Nr. 1", 1);
-		Form FormA();
-        std::cout << a << std::endl;
+		std::cout<< BOLDYELLOW << "Creating Form with signing grade 1" << RESET << std::endl;
+		Form FormA("Test", 1, 1);
+        std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
 	{
-        std::cerr << e.what() << std::endl;
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with signing grade 150" << RESET << std::endl;
+		Form FormA("Test", 150, 1);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with signing grade 0" << RESET << std::endl;
+		Form FormA("Test", 0, 1);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with signing grade 151" << RESET << std::endl;
+		Form FormA("Test", 151, 1);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+    std::cout << std::endl;
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with exec grade 1" << RESET << std::endl;
+		Form FormA("Test", 1, 1);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with exec grade 150" << RESET << std::endl;
+		Form FormA("Test", 1, 150);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with exec grade 0" << RESET << std::endl;
+		Form FormA("Test", 1, 0);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Creating Form with exec grade 151" << RESET << std::endl;
+		Form FormA("Test", 1, 151);
+        std::cout << FormA << std::endl;
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 }

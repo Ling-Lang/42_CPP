@@ -6,13 +6,17 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:49:44 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/02 12:59:42 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/04/10 13:39:40 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Bureaucrat.hpp"
+#include <ostream>
+#include <string>
+#include <string>
+#include <iostream>
+class Bureaucrat;
 class Form
 {
 private:
@@ -22,6 +26,7 @@ private:
     const int _execGrade;
 public:
     /* Constructor and Destructor */
+    Form();
     Form(std::string name, int signGrade, int execGrade);
     ~Form();
     Form(const Form &c_Form);
@@ -31,7 +36,7 @@ public:
     int getExecGrade() const;
     std::string getName() const;
     bool getSigned() const;
-    void setSigned(bool sign);
+    void beSigned(Bureaucrat *r_Bureaucrat);
     
     /* Exceptions */
     class GradeTooLowException : public std::exception

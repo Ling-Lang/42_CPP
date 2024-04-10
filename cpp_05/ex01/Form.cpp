@@ -6,16 +6,24 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:30 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/02 12:57:30 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/04/10 13:43:05 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
+#include "Bureaucrat.hpp"
+Form::Form(): _name("Generic Form"), _signGrade(10), _execGrade(10), _signed(false)
+{
+    
+}
 Form::Form(std::string name, int signGrade, int execGrade): _name(name), _signGrade(signGrade), _execGrade(execGrade)
 {
+    if(signGrade <= 0 || execGrade <= 0)
+        throw Form::GradeTooHighException();
+    else if(signGrade > 150 || execGrade > 150)
+        throw Form::GradeTooLowException();        
     _signed = false;
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Overloaded constructor called" << std::endl;
 }
 
 Form::~Form()
@@ -57,9 +65,16 @@ bool Form::getSigned() const
     return this->_signed;
 }
 
-void Form::setSigned(bool sign)
+void Form::beSigned(Bureaucrat *r_Bureaucrat)   
 {
-    this->_signed = sign;
+    if(r_Bureaucrat->getGrade()<= 0)
+        throw Form::GradeTooHighException();
+    else if(r_Bureaucrat->getGrade() > 150 || r_Bureaucrat->getGrade() > this->getSignGrade())
+        throw Form::GradeTooLowException();
+    else
+        this->_signed = true;
+    std::cout << "Sigining " << *this << std::endl;
+    
 }
 
 const char *Form::GradeTooLowException::what() const throw()
@@ -79,4 +94,3 @@ std::ostream& operator<<(std::ostream &o, const Form &form)
         << form.getSigned();
     return o;
 }
-

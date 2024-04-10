@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:14:25 by jkulka            #+#    #+#             */
-/*   Updated: 2024/03/19 13:59:42 by jkulka           ###   ########.fr       */
+/*   Created: 2024/04/10 12:08:11 by jkulka            #+#    #+#             */
+/*   Updated: 2024/04/10 13:47:10 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,15 @@ void Bureaucrat::decrementGrade()
     if(this->getGrade() + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     this->_grade++;
+}
+
+void Bureaucrat::signForm(Form &r_Form)
+{
+    if(this->getGrade() > r_Form.getSignGrade())
+        std::cerr << RED << *this << " can't sign Form " << r_Form 
+        << "because of grade too low" << RESET << std::endl;
+    else
+        r_Form.beSigned(this);
 }
 
 std::ostream& operator<<(std::ostream &o, const Bureaucrat& bureaucrat) {
