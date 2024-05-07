@@ -97,4 +97,28 @@ int main()
 	{
         std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
+        try
+    {
+		std::cout<< BOLDYELLOW << "Signing form too low using Bureaucrat.signForm" << RESET << std::endl;
+		Form FormA("Test", 1, 10);
+        Bureaucrat Bob("Bob", 10);
+        std::cout << FormA << std::endl;
+        Bob.signForm(FormA);
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+            try
+    {
+		std::cout<< BOLDYELLOW << "Signing form too low using Form.beSigned" << RESET << std::endl;
+		Form FormA("Test", 1, 10);
+        Bureaucrat Bob("Bob", 10);
+        std::cout << FormA << std::endl;
+        FormA.beSigned(&Bob);
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
 }
