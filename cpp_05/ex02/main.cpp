@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:25:29 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/10 14:32:01 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
     try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with signing grade 1" << RESET << std::endl;
-		Form FormA("Test", 1, 1);
+		AForm FormA("Test", 1, 1);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -29,7 +29,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with signing grade 150" << RESET << std::endl;
-		Form FormA("Test", 150, 1);
+		AForm FormA("Test", 150, 1);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -39,7 +39,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with signing grade 0" << RESET << std::endl;
-		Form FormA("Test", 0, 1);
+		AForm FormA("Test", 0, 1);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -49,7 +49,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with signing grade 151" << RESET << std::endl;
-		Form FormA("Test", 151, 1);
+		AForm FormA("Test", 151, 1);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -60,7 +60,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with exec grade 1" << RESET << std::endl;
-		Form FormA("Test", 1, 1);
+		AForm FormA("Test", 1, 1);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -70,7 +70,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with exec grade 150" << RESET << std::endl;
-		Form FormA("Test", 1, 150);
+		AForm FormA("Test", 1, 150);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -80,7 +80,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with exec grade 0" << RESET << std::endl;
-		Form FormA("Test", 1, 0);
+		AForm FormA("Test", 1, 0);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -90,7 +90,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Creating Form with exec grade 151" << RESET << std::endl;
-		Form FormA("Test", 1, 151);
+		AForm FormA("Test", 1, 151);
         std::cout << FormA << std::endl;
     }
     catch(const std::exception& e)
@@ -100,7 +100,7 @@ int main()
         try
     {
 		std::cout<< BOLDYELLOW << "Signing form too low using Bureaucrat.signForm" << RESET << std::endl;
-		Form FormA("Test", 1, 10);
+		AForm FormA("Test", 1, 10);
         Bureaucrat Bob("Bob", 10);
         std::cout << FormA << std::endl;
         Bob.signForm(FormA);
@@ -112,7 +112,7 @@ int main()
             try
     {
 		std::cout<< BOLDYELLOW << "Signing form too low using Form.beSigned" << RESET << std::endl;
-		Form FormA("Test", 1, 10);
+		AForm FormA("Test", 1, 10);
         Bureaucrat Bob("Bob", 10);
         std::cout << FormA << std::endl;
         FormA.beSigned(&Bob);

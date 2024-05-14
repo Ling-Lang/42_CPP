@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:14:10 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/10 13:47:44 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ public:
     void incrementGrade();
     void decrementGrade();
     /* Form Functions */
-    void signForm(Form &r_Form);
+    void signForm(AForm &r_Form);
     /* Exceptions */
 	class GradeTooLowException : public std::exception
 	{

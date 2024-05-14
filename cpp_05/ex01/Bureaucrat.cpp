@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:08:11 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/10 13:47:10 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void Bureaucrat::decrementGrade()
     this->_grade++;
 }
 
-void Bureaucrat::signForm(Form &r_Form)
+void Bureaucrat::signForm(AForm &r_Form)
 {
     if(this->getGrade() > r_Form.getSignGrade())
         std::cerr << RED << *this << " can't sign Form " << r_Form 

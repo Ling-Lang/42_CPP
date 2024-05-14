@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:49:44 by jkulka            #+#    #+#             */
-/*   Updated: 2024/04/10 13:39:40 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <iostream>
 class Bureaucrat;
-class Form
+class AForm
 {
 private:
     const std::string _name;
@@ -26,11 +26,11 @@ private:
     const int _execGrade;
 public:
     /* Constructor and Destructor */
-    Form();
-    Form(std::string name, int signGrade, int execGrade);
-    ~Form();
-    Form(const Form &c_Form);
-    Form &operator=(const Form &c_Form);
+    AForm();
+    AForm(std::string name, int signGrade, int execGrade);
+    ~AForm();
+    AForm(const AForm &c_Form);
+    AForm &operator=(const AForm &c_Form);
     
     int getSignGrade() const;
     int getExecGrade() const;
@@ -51,4 +51,4 @@ public:
     };
 };
 
-std::ostream& operator<<(std::ostream &o, const Form& form);
+std::ostream& operator<<(std::ostream &o, const AForm& form);
