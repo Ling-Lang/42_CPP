@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:08:11 by jkulka            #+#    #+#             */
-/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/24 09:35:00 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,15 @@ void Bureaucrat::signForm(AForm &r_Form)
         << "because of grade too low" << RESET << std::endl;
     else
         r_Form.beSigned(this);
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if(this->getGrade() > form.getExecGrade())
+        std::cerr << RED << *this << "can't exec Form" << form
+        << "because of grade too low" << RESET << std::endl;
+    else
+        form.execute(*this);
 }
 
 std::ostream& operator<<(std::ostream &o, const Bureaucrat& bureaucrat) {

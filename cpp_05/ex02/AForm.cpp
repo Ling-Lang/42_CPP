@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 AForm::AForm(): _name("Generic Form"), _signGrade(10), _execGrade(10), _signed(false)
 {
@@ -93,4 +93,19 @@ std::ostream& operator<<(std::ostream &o, const AForm &form)
         << " and exec grade " << form.getExecGrade() << " sign status "
         << form.getSigned();
     return o;
+}
+
+void AForm::execute(const Bureaucrat &executor) const
+{
+    if(!_signed)
+    {
+        std::cout << "Cannot execute form is not signed" << std::endl;
+        return;
+    }
+    if(executor.getGrade() > _execGrade)
+    {
+        std::cout << "Cannot execute form Bureaucrat grade too low" << std::endl;
+        return;
+    }
+    std::cout << "Executed form" << std::endl;
 }

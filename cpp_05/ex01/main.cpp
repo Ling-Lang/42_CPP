@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:25:29 by jkulka            #+#    #+#             */
-/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/21 12:16:44 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,18 @@ int main()
 		std::cout<< BOLDYELLOW << "Signing form too low using Form.beSigned" << RESET << std::endl;
 		AForm FormA("Test", 1, 10);
         Bureaucrat Bob("Bob", 10);
+        std::cout << FormA << std::endl;
+        FormA.beSigned(&Bob);
+    }
+    catch(const std::exception& e)
+	{
+        std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+                try
+    {
+		std::cout<< BOLDYELLOW << "Signing form too low using Form.beSigned" << RESET << std::endl;
+		AForm FormA("Test", 1, 1);
+        Bureaucrat Bob("Bob", 1);
         std::cout << FormA << std::endl;
         FormA.beSigned(&Bob);
     }

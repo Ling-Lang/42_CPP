@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:49:44 by jkulka            #+#    #+#             */
-/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/21 12:09:40 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,15 @@ public:
     /* Constructor and Destructor */
     AForm();
     AForm(std::string name, int signGrade, int execGrade);
-    ~AForm();
+    virtual ~AForm();
     AForm(const AForm &c_Form);
     AForm &operator=(const AForm &c_Form);
-    
+    virtual void execute(const Bureaucrat &executor) const;
     int getSignGrade() const;
     int getExecGrade() const;
     std::string getName() const;
     bool getSigned() const;
     void beSigned(Bureaucrat *r_Bureaucrat);
-    
     /* Exceptions */
     class GradeTooLowException : public std::exception
     {

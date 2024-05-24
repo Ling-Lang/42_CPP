@@ -6,14 +6,14 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:14:10 by jkulka            #+#    #+#             */
-/*   Updated: 2024/05/14 13:26:37 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/24 09:32:47 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
@@ -23,7 +23,7 @@
 #define BLUE    "\033[34m"      /* Blue */
 #define MAGENTA "\033[35m"      /* Magenta */
 #define CYAN    "\033[36m"      /* Cyan */
-#define WHITE   "\033[37m"      /* White */
+#define WHITE   "\033[37m"        /* White */
 #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
 #define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
@@ -54,6 +54,7 @@ public:
     void decrementGrade();
     /* Form Functions */
     void signForm(AForm &r_Form);
+    void executeForm(AForm const &form);
     /* Exceptions */
 	class GradeTooLowException : public std::exception
 	{

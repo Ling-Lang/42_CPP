@@ -4,7 +4,10 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = 	main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp
+		AForm.cpp \
+		ShrubberyCreateForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
