@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:49:44 by jkulka            #+#    #+#             */
-/*   Updated: 2024/05/24 13:06:11 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/05/24 13:43:26 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <string>
 #include <iostream>
+#include "Bureaucrat.hpp"
 class Bureaucrat;
 class AForm
 {
@@ -35,8 +36,9 @@ public:
     int getExecGrade() const;
     std::string getName() const;
     bool getSigned() const;
-    void beSigned(Bureaucrat *r_Bureaucrat);
+    void beSigned(Bureaucrat &_Bureaucrat);
     virtual void execute(const Bureaucrat &executor) const;
+    static AForm *createForm(std::string _type, std::string _target);
     /* Exceptions */
     class GradeTooLowException : public std::exception
     {
