@@ -2,20 +2,25 @@ NAME = scalarConverter
 RM = rm -f
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp
+SRC = 	main.cpp \
+		ScalarConverter.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
-	$(CXX) $(OBJ) -o $@ $(CXXFLAGS)
+	@$(CXX) $(OBJ) -o $@ $(CXXFLAGS)
 
 %.o: %.cpp
-	$(CXX) -c $< -o $@
+	@$(CXX) -c $< -o $@
+
+test: re
+	./$(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 all: $(NAME)
 
