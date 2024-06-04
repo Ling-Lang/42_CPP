@@ -44,6 +44,34 @@ bool str_isalpha(std::string str)
     return true;
 }
 
+bool str_isfloat(std::string str)
+{
+    int dot_count = 0;
+    bool f_found = false;
+
+    for (int i = 0; i < str.size(); ++i)
+    {
+        if (!isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
+            return false;
+
+        if (str[i] == '.')
+        {
+            ++dot_count;
+            if (dot_count > 1)
+                return false;
+        }
+
+        if (str[i] == 'f')
+        {
+            if (i != str.size() - 1)
+                return false;
+            f_found = true;
+        }
+    }
+
+    return !str.empty() && (dot_count > 0 || f_found);
+}
+
 float convertToFloat(const std::string &str)
 {
     std::string tmp = str;
@@ -92,7 +120,7 @@ void ScalarConverter::convert(const std::string &str)
                 * We check if the string is a number if yes we can assume that it is a ASCII value
                 * which we convert to an int so that we can typecast it back to the corresponding ASCII char 
                 */
-                if(str_isnum(str))
+                if(str_isnum(str) || str_isfloat(str))
                 {
                     int asciinbr = atoi(str.c_str());
                     std::cout << "char: '" << static_cast<char>(asciinbr) << "'" << std::endl;
