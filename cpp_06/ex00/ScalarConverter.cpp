@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 
+//TODO Make a str_isfloat fucntion to check if the str contains for example 42f or 42.0 or 42.0f and then take the appropriate meassures for the str convert
 #include "ScalarConverter.hpp"
 
 bool str_isprint(std::string str)
@@ -64,7 +65,7 @@ double convertToDouble(const std::string &str)
     std::istringstream stream(tmp);
     double ret;
     stream >> ret;
-    if(stream.fail() ||!stream.eof())
+    if(stream.fail() || !stream.eof())
         throw std::exception();
     return ret;
 }
@@ -96,7 +97,7 @@ void ScalarConverter::convert(const std::string &str)
                     int asciinbr = atoi(str.c_str());
                     std::cout << "char: '" << static_cast<char>(asciinbr) << "'" << std::endl;
                 }                    
-                else if(str_isalpha(str))
+                else if(str_isprint(str))
                     std::cout << "char: '" << str << "'" << std::endl;
                 else
                     std::cout << "char: Non printable" << std::endl;

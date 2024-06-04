@@ -15,6 +15,6 @@
 int main(int argc, char **argv)
 {
     //TODO if float check for print errors like 42f 42.0f and stuff for more info look subject;
-    ScalarConverter::convert("42");
+    ScalarConverter::convert("42f");
     // std::cout << "Hello World" << std::endl;   
 }
